@@ -12,7 +12,7 @@ public class HangmanGame {
             puzzle.show(); 
             System.out.print("\nMake a guess: ");
             String guess = scanner.nextLine();
-            if (!puzzle.makeGuess(guess)) {
+            if (!puzzle.makeGuess(guess.toUpperCase())) {
                 hangingMan.dieSomeMore();
                 System.out.println("wrong");
             } 

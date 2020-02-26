@@ -7,6 +7,9 @@ public class Puzzle
 {
     
     ArrayList<String> words;
+     String correct="correct";
+      String[] A; //= new String[correct.length()];
+      String[] Wrg; //= new String[100];
     public Puzzle() {
          words = new ArrayList<String>();
 
@@ -25,11 +28,17 @@ public class Puzzle
         catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+            correct=words.get((int)(Math.random()*words.size())).toString();
+            A = new String[correct.length()];
+             Wrg = new String[100];
+            System.out.println(correct);
+            System.out.println(correct.length());
     }
-    String [] correct=wordD(words.get((int)(Math.random())*(words.size())));
-    String[] A = new String[correct.length];
-    String[] Wrg = new String[100];
-    String 
+    //String [] correcT=wordD(words.get(4));
+    
+    //String[] A = new String[correct.length()];
+    //String[] Wrg = new String[100];
+    
     int wrg=0;
     public String[] wordD(String s) {
         String[] a= new String[s.length()];
@@ -78,7 +87,7 @@ public class Puzzle
     public boolean makeGuess(String guess) {
         int yes=0;
         for(int i=0; i<correct.length();i++){
-            String s=correct.substring(i,i+1);
+            String s=correct.substring(i,i+1);//correct[i];
           if(guess.equals(s)){
               A[i]=guess;
               yes=1;
